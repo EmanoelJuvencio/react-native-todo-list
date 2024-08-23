@@ -1,7 +1,7 @@
 import { StatusBar, Text, View } from 'react-native'
 import { styles } from './styles'
-import { Content } from '../../components/molecules/Content'
-import { Header } from '../../components/molecules/Header'
+import { Header } from '../../components/template/Header'
+import { Content } from '../../components/template/Content'
 
 export function Home() {
   return (
