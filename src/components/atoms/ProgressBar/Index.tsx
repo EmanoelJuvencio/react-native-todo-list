@@ -7,30 +7,30 @@ interface IProgressBar {
 
 export function ProgressBar({ progress }: IProgressBar) {
   return (
-    <View style={styles(progress).containerProgressBar}>
-      <View style={styles(progress).backgroundProgressBar} />
-      <View style={styles(progress).overlayProgressBar} />
+    <View style={styles(progress).container}>
+      <View style={styles(progress).background} />
+      <View style={styles(progress).overlay} />
     </View>
   )
 }
 
 function styles(progress: number) {
   return StyleSheet.create({
-    containerProgressBar: {
+    container: {
       flex: 1,
       marginTop: 10,
     },
-    backgroundProgressBar: {
+    background: {
       height: 5,
       borderRadius: 10,
       backgroundColor: gray500,
     },
-    overlayProgressBar: {
+    overlay: {
       position: 'absolute',
       height: 5,
       borderRadius: 10,
       backgroundColor: blueDark,
-      width: `${progress}%`, // Cor com transparência
+      width: `${progress}%`,
     },
   })
 }
