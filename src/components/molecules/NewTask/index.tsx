@@ -1,5 +1,6 @@
 import {
   Alert,
+  Keyboard,
   StyleSheet,
   TextInput,
   TouchableOpacity,
@@ -31,6 +32,7 @@ export function NewTask(props: INewTaskProps) {
 
     submitTask(textInput)
     setTextInput('')
+    Keyboard.dismiss()
   }
 
   return (
@@ -41,6 +43,7 @@ export function NewTask(props: INewTaskProps) {
         placeholderTextColor={gray300}
         defaultValue={textInput}
         onChangeText={setTextInput}
+        keyboardAppearance='dark'
       />
 
       <TouchableOpacity
