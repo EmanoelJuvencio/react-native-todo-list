@@ -1,11 +1,11 @@
 import Checkbox from 'expo-checkbox'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import { IconTrash } from '../../../icons/trash'
-import { useState } from 'react'
 import {
   blue,
   gray100,
   gray300,
+  gray400,
   gray500,
   purpleDark,
 } from '../../../utils/globalStyle'
@@ -27,7 +27,8 @@ export function Task(props: ITaskProps) {
       gap: 20,
       padding: 18,
       alignItems: 'center',
-      backgroundColor: gray500,
+      backgroundColor: completed ? gray500 : gray400,
+      opacity: 10,
       borderRadius: 5,
       marginTop: 15,
     },

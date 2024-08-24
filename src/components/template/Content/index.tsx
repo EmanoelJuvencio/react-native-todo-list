@@ -59,7 +59,9 @@ export function Content() {
       <FlatList
         data={tasks}
         keyExtractor={(item) => item.id}
+        style={{ marginTop: 10 }}
         showsVerticalScrollIndicator={false}
+        scrollEnabled
         renderItem={({ item }) => (
           <Task
             text={item.description}
