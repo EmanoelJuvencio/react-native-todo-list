@@ -18,4 +18,4 @@ export const danger = '#E25858'
 
 // Fontes
 export const InterRegular = 'Inter_400Regular'
-export const InterBold = 'Inter_700Bold'
+export const InterBold = ''
