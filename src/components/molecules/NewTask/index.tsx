@@ -1,4 +1,10 @@
-import { StyleSheet, TextInput, TouchableOpacity, View } from 'react-native'
+import {
+  Alert,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native'
 import {
   blueDark,
   gray100,
@@ -7,17 +13,40 @@ import {
   gray700,
 } from '../../../utils/globalStyle'
 import { IconPlus } from '../../../icons/plus'
+import { useState } from 'react'
 
-export function NewTask(props: any) {
+interface INewTaskProps {
+  submitTask: (text: string) => void
+}
+
+export function NewTask(props: INewTaskProps) {
+  const { submitTask } = props
+
+  const [textInput, setTextInput] = useState<string>('')
+
+  function handleButtonAddNewTask() {
+    if (textInput === '') {
+      return Alert.alert('Atenção', 'Escreva uma descrição para a tarefa')
+    }
+
+    submitTask(textInput)
+    setTextInput('')
+  }
+
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
         placeholder='Adicione uma nova tarefa'
         placeholderTextColor={gray300}
+        defaultValue={textInput}
+        onChangeText={setTextInput}
       />
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => handleButtonAddNewTask()}
+      >
         <IconPlus />
       </TouchableOpacity>
     </View>

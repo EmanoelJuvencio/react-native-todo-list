@@ -3,7 +3,14 @@ import { Badge } from '../../atoms/Badge'
 import { Typography } from '../../atoms/Typography'
 import { blue, gray500, purple } from '../../../utils/globalStyle'
 
-export function HeaderToDoList() {
+interface IHeaderToDoList {
+  countCreated: number
+  countCompleted: number
+}
+
+export function HeaderToDoList(props: IHeaderToDoList) {
+  const { countCreated, countCompleted } = props
+
   return (
     <>
       <View
@@ -14,13 +21,13 @@ export function HeaderToDoList() {
         }}
       >
         <View style={styles.containerResumer}>
-          <Typography text='Criadas' bold color={blue} />
-          <Badge value={0} />
+          <Typography text='Criadas' bold style={{ color: blue }} />
+          <Badge value={countCreated} />
         </View>
 
         <View style={styles.containerResumer}>
-          <Typography text='Concluídas' bold color={purple} />
-          <Badge value={0} />
+          <Typography text='Concluídas' bold style={{ color: purple }} />
+          <Badge value={countCompleted} />
         </View>
       </View>
 

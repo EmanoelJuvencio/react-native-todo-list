@@ -1,21 +1,19 @@
-import { Text } from 'react-native'
+import { Text, TextStyle } from 'react-native'
 import { InterBold, InterRegular } from '../../../utils/globalStyle'
 
 interface ITypographyProps {
   text: string
   bold?: boolean
-  color?: string
+  style: TextStyle
 }
 
 export function Typography(props: ITypographyProps) {
-  const { text, bold, color } = props
-
-  console.log(bold)
+  const { text, bold, style } = props
 
   return (
     <Text
       style={{
-        color: color ? color : '',
+        ...style,
         fontWeight: bold ? 700 : 400,
       }}
     >
