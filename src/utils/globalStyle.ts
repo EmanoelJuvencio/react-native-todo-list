@@ -1,6 +1,6 @@
 // Cores do Produto
-export const blue = '#1E6F9F'
-export const blueDark = '#4EA8DE'
+export const blue = '#4EA8DE'
+export const blueDark = '#1E6F9F'
 export const purple = '#8284FA'
 export const purpleDark = '#5E60CE'
 

@@ -51,6 +51,10 @@ export function Content() {
       <HeaderToDoList
         countCompleted={tasks.filter((task) => task.completed === true).length}
         countCreated={tasks.length}
+        progressBar={
+          (tasks.filter((task) => task.completed === true).length * 100) /
+          tasks.length
+        }
       />
       <FlatList
         data={tasks}

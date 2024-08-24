@@ -1,15 +1,25 @@
 import { StyleSheet, View } from 'react-native'
 import { Badge } from '../../atoms/Badge'
 import { Typography } from '../../atoms/Typography'
-import { blue, gray500, purple } from '../../../utils/globalStyle'
+import { blue, blueDark, gray500, purple } from '../../../utils/globalStyle'
+import { ProgressBar } from '../../atoms/ProgressBar/Index'
 
 interface IHeaderToDoList {
   countCreated: number
   countCompleted: number
+  progressBar: number
 }
 
 export function HeaderToDoList(props: IHeaderToDoList) {
-  const { countCreated, countCompleted } = props
+  const { countCreated, countCompleted, progressBar } = props
+
+  const styles = StyleSheet.create({
+    containerResumer: {
+      flexDirection: 'row',
+      gap: 4,
+      alignItems: 'center',
+    },
+  })
 
   return (
     <>
@@ -31,17 +41,7 @@ export function HeaderToDoList(props: IHeaderToDoList) {
         </View>
       </View>
 
-      <View
-        style={{ borderBottomWidth: 1, marginTop: 10, borderColor: gray500 }}
-      />
+      <ProgressBar progress={progressBar} />
     </>
   )
 }
-
-export const styles = StyleSheet.create({
-  containerResumer: {
-    flexDirection: 'row',
-    gap: 4,
-    alignItems: 'center',
-  },
-})
