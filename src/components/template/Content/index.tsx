@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { View, StyleSheet, FlatList, Alert } from 'react-native'
+import uuid from 'react-native-uuid'
 
 import { NewTask } from '../../molecules/NewTask'
 import { HeaderToDoList } from '../../molecules/HeaderToDoList'
 import { Task } from '../../molecules/Task'
-import uuid from 'react-native-uuid'
-import { Text } from 'react-native-svg'
+import { EmptyTaskList } from '../../molecules/EmptyTaskList'
 
 interface ITasks {
   id: string
@@ -77,11 +77,7 @@ export function Content() {
             }
           />
         )}
-        ListEmptyComponent={() => (
-          <View>
-            <Text>Nenhuma Tarefa Cadastrada</Text>
-          </View>
-        )}
+        ListEmptyComponent={() => <EmptyTaskList />}
       />
     </View>
   )

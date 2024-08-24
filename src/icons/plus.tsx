@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Svg, { ClipPath, Defs, G, Path, Rect } from 'react-native-svg'
+import Svg, { Path } from 'react-native-svg'
 import { gray100 } from '../utils/globalStyle'
 
 interface IIconPlus {

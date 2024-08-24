@@ -4,7 +4,7 @@ import { InterBold, InterRegular } from '../../../utils/globalStyle'
 interface ITypographyProps {
   text: string
   bold?: boolean
-  style: TextStyle
+  style?: TextStyle
 }
 
 export function Typography(props: ITypographyProps) {
