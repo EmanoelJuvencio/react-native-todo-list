@@ -55,7 +55,11 @@ export function Task(props: ITaskProps) {
   })
 
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      activeOpacity={1}
+      onPress={onChange}
+    >
       <View style={styles.containerCheckBoxText}>
         <Checkbox
           disabled={false}
@@ -72,6 +76,6 @@ export function Task(props: ITaskProps) {
       <TouchableOpacity style={styles.trashButton} onPress={removeTask}>
         <IconTrash />
       </TouchableOpacity>
-    </View>
+    </TouchableOpacity>
   )
 }

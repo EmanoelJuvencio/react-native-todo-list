@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { View, StyleSheet, FlatList } from 'react-native'
+import { View, StyleSheet, FlatList, Alert } from 'react-native'
 
 import { NewTask } from '../../molecules/NewTask'
 import { HeaderToDoList } from '../../molecules/HeaderToDoList'
@@ -61,7 +61,16 @@ export function Content() {
             text={item.description}
             completed={item.completed}
             onChange={() => handleStatusTask(item)}
-            removeTask={() => handleRemoveTask(item)}
+            removeTask={() =>
+              Alert.alert('Confirme para continuar', 'Deseja remover tarefa?', [
+                {
+                  text: 'Sim',
+                  style: 'destructive',
+                  onPress: () => handleRemoveTask(item),
+                },
+                { text: 'Não' },
+              ])
+            }
           />
         )}
         ListEmptyComponent={() => (
